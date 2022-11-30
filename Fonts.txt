@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Sora
+Author: Jonathan Barnbrook,Julián Moncada
+Url: https://fonts.google.com/specimen/Sora
+
+Font: Playfair Display
+Author: Claus Eggers Sørensen
+Url: https://fonts.google.com/specimen/Playfair+Display
