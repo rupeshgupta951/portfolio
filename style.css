@@ -361,5 +361,5 @@ a > p{
 	overflow: hidden;
 	animation: typing 3s steps(21, end),
 	           blink-caret .5s step-end infinite alternate;
-}
+} 
 
