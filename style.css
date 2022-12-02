@@ -308,6 +308,10 @@ a > p{
 }
 #back{
   margin-left: 0;
+  margin-right: 0;
+}
+#lf{
+  margin-right:0;	
 }
 
 
