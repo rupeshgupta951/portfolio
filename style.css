@@ -271,7 +271,7 @@ a > p{
 }
 .cardA:hover {
   
-  box-shadow: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   cursor: pointer;
    height: 16.5rem;
   width: 16.5vw;
@@ -279,7 +279,7 @@ a > p{
 }
 .cardB:hover {
   
-  box-shadow: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   cursor: pointer;
    height: 16.5rem;
   width: 16.5vw;
