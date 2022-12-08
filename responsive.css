@@ -367,7 +367,7 @@ a {
  
   #T2 {
     margin-left: 30px;
-    font: bold 200% Consolas, Monaco, monospace;
+    font: bold 180% Consolas, Monaco, monospace;
     border-right: 0.1em solid black;
     width: 16.5em;
     width: 25ch;
@@ -377,7 +377,7 @@ a {
       blink-caret 0.5s step-end infinite alternate;
   }
   #T4 {
-    font: bold 200% Consolas, Monaco, monospace;
+    font: bold 180% Consolas, Monaco, monospace;
     border-right: 0.1em solid black;
     width: 16.5em;
     width: 25ch;
@@ -388,7 +388,7 @@ a {
   }
   #T1 {
     justify-content: center;
-    font: bold 200% Consolas, Monaco, monospace;
+    font: bold 180% Consolas, Monaco, monospace;
     border-right: 0.1em solid black;
     width: 16.5em;
     width: 25ch;
@@ -408,6 +408,70 @@ a {
     border-radius: 10px;
     padding-left: 10px;
     margin-top: 0px;
+  }
+ ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    fontsize:large;
+  }
+ 
+ }
+ @media only screen and (max-width: 800px) {
+ 
+  #T2 {
+    margin-left: 30px;
+    font: bold 160% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 16.5em;
+    width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(21, end),
+      blink-caret 0.5s step-end infinite alternate;
+  }
+  #T4 {
+    font: bold 160% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 16.5em;
+    width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(21, end),
+      blink-caret 0.5s step-end infinite alternate;
+  }
+  #T1 {
+    justify-content: center;
+    font: bold 160% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 16.5em;
+    width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(21, end),
+      blink-caret 0.5s step-end infinite alternate;
+  }
+  .field {
+    color: white;
+    font: 15px solid;
+    text-align: left;
+    border: 0.2px solid rgb(255, 255, 255);
+    height: 50px;
+    width: 390px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-top: 0px;
+  }
+ ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    fontsize:large;
   }
  
  }
