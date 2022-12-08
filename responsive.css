@@ -341,7 +341,7 @@
     font-size: 15px;
   }
 }
-@media only screen and (max-width: 380px){
+@media only screen and (max-width: 360px){
 a {
     text-decoration: none;
     color: white;
