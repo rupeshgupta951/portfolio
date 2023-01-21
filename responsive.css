@@ -378,4 +378,7 @@ a {
 #T1 {
   font-size: 20px;
 }
+.field {
+  width: 250px;
+}
 }
