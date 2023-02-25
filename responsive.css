@@ -1,0 +1,389 @@
+@media only screen and (max-width: 700px) {
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  a {
+    text-decoration: none;
+    color: white;
+    margin-left: auto;
+    margin-top: 15px;
+    font-size: 14px;
+    margin-right: auto;
+  }
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar {
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border-bottom: 2px solid white;
+  }
+  #myimage {
+    display: none;
+  }
+  #intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-bottom: 20px;
+    color: white;
+  }
+  #T1 {
+    margin-top: 0;
+    font-size: 60px;
+    color: aqua;
+    margin-left: 30px;
+  }
+
+  #T3 {
+    display: none;
+  }
+
+  #T4 {
+    font-size: 60px;
+    color: yellow;
+    margin-left: 30px;
+  }
+  #T2 {
+    margin-left: 30px;
+    font: bold 160% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 16.5em;
+    width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(21, end),
+      blink-caret 0.5s step-end infinite alternate;
+  }
+  #T4 {
+    font: bold 160% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 16.5em;
+    width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(21, end),
+      blink-caret 0.5s step-end infinite alternate;
+  }
+  #T1 {
+    justify-content: center;
+    font: bold 160% Consolas, Monaco, monospace;
+    border-right: 0.1em solid black;
+    width: 16.5em;
+    width: 25ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(21, end),
+      blink-caret 0.5s step-end infinite alternate;
+  }
+  .container {
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    border-bottom: 2px solid white;
+    margin-top: 57px;
+  }
+  .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 330px;
+    margin-top: 20px;
+    border-bottom: 2px solid white;
+    overflow: hidden;
+  }
+  #about {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .cardA {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    height: 8rem;
+    width: 40vw;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    overflow: hidden;
+  }
+  .cardB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    height: 8rem;
+    width: 25vw;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 0.8rem;
+    overflow: hidden;
+  }
+  .cardA:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    height: 8rem;
+    width: 40vw;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    overflow: hidden;
+  }
+  .cardB {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    height: 8rem;
+    width: 25vw;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7rem;
+    overflow: hidden;
+  }
+  .cardB:hover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+    background-color: rgb(0, 0, 0);
+    height: 8rem;
+    width: 25vw;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 0.7rem;
+    overflow: hidden;
+  }
+  i > img {
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 0px;
+    height: 6rem;
+    width: 30vw;
+    overflow: hidden;
+  }
+  .cardB i > img {
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 5px;
+    height: 6rem;
+    width: 20vw;
+    overflow: hidden;
+  }
+  #AboutMe,
+  #Skills,
+  #ContactUs, #Projects{
+    color: white;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    border-bottom: 6px solid whitesmoke;
+  }
+  #skills {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    background-color: rgb(255, 255, 255);
+  }
+  #form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 95vw;
+  }
+  .field {
+    color: white;
+    font: 15px solid;
+    text-align: left;
+    border: 0.2px solid rgb(255, 255, 255);
+    height: 50px;
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 10px;
+    margin-top: 0px;
+  }
+  #message {
+    height: 140px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  
+  textarea {
+    margin-top: 10px;
+  }
+  :-ms-input-placeholder {
+    color: transparent;
+  }
+  input:focus::-webkit-input-placeholder {
+    color: white;
+  }
+  :-ms-textarea-placeholder {
+    color: transparent;
+  }
+  input:focus::-webkit-textarea-placeholder {
+    color: white;
+  }
+  
+  #mybtn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font: 1.5rem bold;
+    font-family: sans-serif;
+    width: 150px;
+    margin-top: 5px;
+    text-align: center;
+    overflow: hidden;
+  }
+  #mybtn:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font: 1.5rem bold;
+    font-family: sans-serif;
+    width: 150px;
+    margin-top: 5px;
+    text-align: center;
+    overflow: hidden;
+  }
+  a > img {
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 10px;
+    height: 2rem;
+    width: 8vw;
+  }
+  .footcard > a {
+    margin: 0px;
+    padding: 0;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+  }
+  .links {
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+  .footertext {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    background-color: rgb(0, 0, 0);
+  }
+  .footertext:hover {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: rgb(225, 255, 0);
+    font-size: 10px;
+    background-color: rgb(0, 0, 0);
+  }
+  .basetext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  
+  #back{
+    margin-left: 0;
+    font-size: 15px;
+  }
+  .project{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: auto;
+  }
+  .project a{
+    width: 90vw;
+    margin: 10px 0px;
+    font-size: 20px
+  }
+  .project span{
+    font-size: medium;
+    display: flex;
+  }
+  #top{
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 360px){
+a {
+    text-decoration: none;
+    color: white;
+    margin-left: 0px;
+    margin-top: 15px;
+    font-size: 15px;
+    margin-right: 15px;
+}
+
+#ct {  
+    margin-right: 0px;
+}
+#hm{
+  margin-left: 0px;
+}
+#T2 {
+  font-size: 20px;
+}
+#T4 {
+  font-size: 20px;
+}
+#T1 {
+  font-size: 20px;
+}
+.field {
+  width: 250px;
+}
+}
