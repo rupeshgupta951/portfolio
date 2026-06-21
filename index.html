@@ -1,326 +1,1120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RG's_Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css" />
-    <link rel="shortcut icon" href="RG.ico" type="image/x-icon">
-  </head>
-  <body>
-    <header>
-      <div class="navbar" id="btt">
-        <nav>
-          <ul class="navlist">
-            <a href="#Home" id="hm"><li>Home</li></a>
-            <a href="#About"><li>About Me</li></a>
-            <a href="#Myskills"><li>Skills</li></a>
-            <a href="#Projects"><li>Projects</li></a>
-            <a href="#Contact" id="ct"><li>Contact</li></a>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main>
-      <div id="Home" class="container">
-        <div id="intro">
-          <h1 class="introText" id="T1">Hello, <span id="T5">Dude!</span></h1>
-          <h2 class="introText" id="T2">
-            I am &lt;&nbsp;Rupesh Gupta&nbsp;&gt;
-          </h2>
-          <h1 class="introText" id="T4">a Frontend Web Developer :)</h1>
-          <h3 class="introText" id="T3">
-            &nbsp;&nbsp;&nbsp;&nbsp;"I am an aspiring & passionate Frontend Web
-            Developer. I love transforming Websites design into Code and make
-            them act in real world. Contact me if you need a "Frontend
-            Developer" may be!"
-          </h3>
-        </div>
-      </div>
-      <div id="About">
-        <div class="Block">
-          <div>
-            <p id="AboutMe">About Me</p>
-            <p></p>
-          </div>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rupesh Gupta — Frontend Developer</title>
+<meta name="description" content="Rupesh Gupta — Frontend Developer specializing in Angular, TypeScript & enterprise UI engineering."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+/* ─── TOKENS ─────────────────────────────────────────────────── */
+:root{
+  --bg:#07090F;
+  --bg1:#0D1117;
+  --bg2:#111827;
+  --border:#1a2640;
+  --border2:#243452;
+  --accent:#4F8EF7;
+  --accent2:#7AB3FF;
+  --teal:#00D4AA;
+  --orange:#FF8C42;
+  --white:#EEF2FF;
+  --muted:#7C8DB0;
+  --dim:#3D4F70;
+  --font-d:'Space Grotesk',sans-serif;
+  --font-b:'Inter',sans-serif;
+  --font-m:'JetBrains Mono',monospace;
+  --r:14px;
+  --rs:8px;
+  --tr:0.22s ease;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--white);font-family:var(--font-b);font-size:16px;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+::selection{background:rgba(79,142,247,.3);color:var(--white)}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg1)}
+::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
 
-          <div class="cards" id="about">
-            <div class="cardA" id="design">
-              <i><img src="design.jpg" alt="" /></i>
-              <p>Design</p>
-            </div>
-            <div class="cardA" id="responsive">
-              <i><img src="responsive.jpg" alt="" /></i>Responsive
-            </div>
-            <div class="cardA" id="fast">
-              <i><img src="fast.jpg" alt="" /></i>Fast
-            </div>
-            <div class="cardA" id="fast">
-              <i><img src="seo.jpg" alt="" /></i>SEO
-            </div>
-          </div>
-        </div>
-      </div>
+/* ─── SCROLL PROGRESS ────────────────────────────────────────── */
+#pbar{position:fixed;top:0;left:0;height:2px;width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--teal));z-index:9999;transition:width .1s linear}
 
-      <div id="Myskills" class="Block">
-        <div>
-          <p id="Skills">My Skills</p>
-        </div>
-        <div class="cards" id="skills">
-          <div class="cardB" id="HTML">
-            <i><img src="html.png" alt="" /></i>
-            <p>HTML</p>
-          </div>
-          <div class="cardB" id="CSS">
-            <i><img src="css.png" alt="" /></i>CSS
-          </div>
-          <div class="cardB" id="Javascript">
-            <i><img src="java-script.png" alt="" /></i>JAVASCRIPT
-          </div>
-          <div class="cardB" id="Bootstrap">
-            <i><img src="bootstrap.png" alt="" /></i>
-            <p>BOOTSTRAP</p>
-          </div>
-          <div class="cardB" id="REACT">
-            <i><img src="react.png" alt="" /></i>REACT JS
-          </div>
-          <div class="cardB" id="GIT">
-            <i><img src="github.png" alt="" /></i> GIT & GITHUB
-          </div>
-        </div>
-      </div>
+/* ─── NAV ────────────────────────────────────────────────────── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(1.5rem,5vw,4rem);height:62px;
+  background:rgba(7,9,15,.8);backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;transition:border-color var(--tr)}
+nav.sc{border-color:var(--border)}
+.nav-logo{font-family:var(--font-d);font-size:1rem;font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:.4rem}
+.nav-logo-mark{width:28px;height:28px;border-radius:7px;
+  background:linear-gradient(135deg,var(--accent),var(--teal));
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:800;color:#07090F}
+.nl{display:flex;gap:1.75rem;align-items:center}
+.nl a{font-size:.82rem;font-weight:500;color:var(--muted);position:relative;transition:color var(--tr)}
+.nl a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1.5px;
+  background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform var(--tr)}
+.nl a:hover,.nl a.act{color:var(--white)}
+.nl a:hover::after,.nl a.act::after{transform:scaleX(1)}
+.nav-hire{padding:.4rem 1.1rem;border:1.5px solid var(--accent);border-radius:var(--rs);
+  color:var(--accent)!important;font-size:.82rem;font-weight:600;
+  transition:background var(--tr),color var(--tr)!important}
+.nav-hire:hover{background:var(--accent);color:var(--bg)!important}
+.nav-hire::after{display:none!important}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.ham span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:.3s}
+.mob-nav{display:none;position:fixed;top:62px;left:0;right:0;bottom:0;
+  background:rgba(7,9,15,.97);backdrop-filter:blur(20px);z-index:199;
+  flex-direction:column;align-items:center;justify-content:center;gap:2.5rem}
+.mob-nav.op{display:flex}
+.mob-nav a{font-family:var(--font-d);font-size:1.4rem;font-weight:600;color:var(--muted);transition:color var(--tr)}
+.mob-nav a:hover{color:var(--accent)}
 
-      <div id="Projects">
-        <div class="Block">
-          <div>
-            <p id="AboutMe">Projects</p>
-            <p></p>
-          </div>
+/* ─── LAYOUT ─────────────────────────────────────────────────── */
+.wrap{max-width:1160px;margin:0 auto;padding:0 clamp(1.5rem,6vw,5rem)}
+section{padding:clamp(4.5rem,9vh,7rem) 0}
+.lbl{font-family:var(--font-m);font-size:.7rem;font-weight:500;
+  color:var(--accent);letter-spacing:.18em;text-transform:uppercase;margin-bottom:.65rem}
+.h2{font-family:var(--font-d);font-size:clamp(1.65rem,3.8vw,2.6rem);
+  font-weight:700;letter-spacing:-.035em;line-height:1.12;margin-bottom:.9rem}
+.sub{color:var(--muted);font-size:1rem;max-width:520px;margin-bottom:2.75rem;line-height:1.8}
+hr.div{border:none;border-top:1px solid var(--border);margin:0}
 
-          <div class="cards project" id="Projects">
-            <a href="https://rupeshgupta951.github.io/Wheather-App/">
-              <div class="cardA hover" id="weather">
-                <i><img src="weather.webp" alt="" /></i>Weather App
-              </div>
-              <span
-                >"Weather App with Real time Forecasting from scratch using
-                HTML, CSS & JavaScript"</span
-              ></a
-            >
-            <a href="https://rupeshgupta951.github.io/What-To-Do-App/"
-              ><div class="cardA hover" id="todo">
-                <i><img src="todo.jpg" alt="" /></i>To-Do-List App
-              </div>
-              <span
-                >"To-Do-List App with CRUD Operation using React JS &
-                Bootstrap"</span
-              ></a
-            >
-            <a href="https://calculatorbyrg.netlify.app/"
-              ><div class="cardA hover" id="portfolio">
-                <i><img src="calculator.png" alt="" /></i>Calculator
-              </div>
-              <span
-                >"Simple Arithmetic Calculator with React JS and great User interface and User Experience"</span
-              ></a
-            >
-            <a href="https://astounding-peony-25720c.netlify.app/"
-              ><div class="cardA hover" id="portfolio">
-                <i><img src="E-business.png" alt="" /></i>E-Vehicle
-              </div>
-              <span
-                >"Responsive Landing Page for an E-Vehicle Business using HTML, CSS, 
-                JavaScript & Bootstrap."</span
-              ></a
-            >
-            <a href="https://cosmic-parfait-dbe231.netlify.app/"
-              ><div class="cardA hover" id="portfolio">
-                <i><img src="dashboard.jpg" alt="" /></i>Dashboard
-              </div>
-              <span
-                >"Responsive Dashboard using React JS, Material UI & SCSS."</span
-              ></a
-            >
-            <a href="https://rupeshgupta951.github.io/portfolio/"
-              ><div class="cardA hover" id="portfolio">
-                <i><img src="main.png" alt="" /></i>Portfolio
-              </div>
-              <span
-                >"Personal Portfolio as you can see from scratch using HTML, CSS
-                & JavaScript"</span
-              ></a
-            >
-          </div>
-        </div>
-      </div>
+/* ─── HERO ───────────────────────────────────────────────────── */
+#hero{min-height:100vh;display:flex;align-items:center;padding-top:80px;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;
+  background-image:linear-gradient(var(--border) 1px,transparent 1px),
+    linear-gradient(90deg,var(--border) 1px,transparent 1px);
+  background-size:48px 48px;opacity:.3;
+  mask-image:radial-gradient(ellipse 90% 70% at 50% 30%,black 20%,transparent 100%)}
+.hero-orb{position:absolute;top:10%;left:55%;width:500px;height:500px;
+  background:radial-gradient(ellipse,rgba(79,142,247,.13) 0%,transparent 65%);
+  pointer-events:none;transform:translateX(-50%)}
+.hero-orb2{position:absolute;bottom:15%;right:5%;width:300px;height:300px;
+  background:radial-gradient(ellipse,rgba(0,212,170,.08) 0%,transparent 70%);pointer-events:none}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;
+  padding:.3rem .85rem;border:1px solid rgba(0,212,170,.35);border-radius:100px;
+  background:rgba(0,212,170,.08);font-family:var(--font-m);font-size:.72rem;
+  color:var(--teal);margin-bottom:1.5rem;width:fit-content}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--teal);
+  border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+.hero-name{font-family:var(--font-d);font-size:clamp(2.8rem,7vw,5.2rem);
+  font-weight:800;letter-spacing:-.045em;line-height:1.0;margin-bottom:.6rem}
+.hero-name .g{
+  background:linear-gradient(135deg,var(--white) 40%,var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-role{font-family:var(--font-m);font-size:clamp(.9rem,2vw,1.15rem);
+  color:var(--muted);margin-bottom:1.5rem;min-height:1.8rem}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--accent);
+  margin-left:2px;animation:blink 1s step-end infinite;vertical-align:text-bottom}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:1.02rem;color:var(--muted);max-width:530px;line-height:1.85;margin-bottom:2rem}
+.hero-desc strong{color:var(--white);font-weight:500}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn-p{display:inline-flex;align-items:center;gap:.45rem;
+  padding:.7rem 1.6rem;background:var(--accent);color:var(--bg);
+  border-radius:var(--rs);font-weight:700;font-size:.875rem;border:none;cursor:pointer;
+  transition:transform var(--tr),box-shadow var(--tr),background var(--tr)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(79,142,247,.38);background:#6aa3ff}
+.btn-s{display:inline-flex;align-items:center;gap:.45rem;
+  padding:.7rem 1.6rem;border:1.5px solid var(--border2);color:var(--muted);
+  border-radius:var(--rs);font-weight:600;font-size:.875rem;
+  transition:border-color var(--tr),color var(--tr),transform var(--tr)}
+.btn-s:hover{border-color:var(--accent);color:var(--white);transform:translateY(-2px)}
+.hero-socials{display:flex;gap:1rem;align-items:center}
+.hero-socials a{color:var(--dim);transition:color var(--tr),transform var(--tr);line-height:0}
+.hero-socials a:hover{color:var(--accent);transform:translateY(-2px)}
+.hero-socials svg{width:19px;height:19px;fill:currentColor}
+.sep{width:1px;height:18px;background:var(--border2)}
+.hero-loc{font-family:var(--font-m);font-size:.68rem;color:var(--dim)}
 
-      <div id="Contact" class="Block">
-        <div>
-          <p id="ContactUs">Contact Us</p>
-        </div>
-        <div class="myform">
-          <form id="form">
-            <input
-              name="name"
-              autocomplete="none"
-              min="2"
-              max="20"
-              placeholder="Name"
-              type="text"
-              id="name"
-              class="field"
-              required
-            />
-            <input
-              name="email"
-              autocomplete="none"
-              min="2"
-              max="20"
-              placeholder="Email"
-              type="email"
-              id="email"
-              class="field"
-              required
-            />
-            <input
-              name="phone"
-              autocomplete="none"
-              maxlength="10"
-              placeholder="Mobile Number"
-              type="text"
-              id="phone"
-              class="field"
-              required
-            />
-            <textarea
-              name="message"
-              type-="text"
-              min="2"
-              max="250"
-              placeholder="Message"
-              id="message"
-              class="field"
-              wrap="hard"
-              rows="4"
-              required
-            ></textarea>
-            <button
-              onclick="location.href='mailto:rupeshid951@gmail.com';"
-              type="submit"
-              class="field"
-              id="mybtn"
-            >
-              Send
-            </button>
-          </form>
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div id="foot">
-        <div class="links">
-          <div class="footcard">
-            <a
-              target="_blank"
-              class="footcard"
-              href="https://www.linkedin.com/in/rupesh-gupta-938210214/"
-            >
-              <img src="linkedin.png" alt="" />
-              <p>LinkedIn</p></a
-            >
-          </div>
-          <div class="footcard">
-            <a
-              target="_blank"
-              class="footcard"
-              href="https://github.com/rupeshgupta951"
-            >
-              <img src="githubicon.png" alt="" />
-              <p>Github</p></a
-            >
-          </div>
-          <div class="footcard">
-            <a
-              target="_blank"
-              class="footcard"
-              href="https://www.facebook.com/profile.php?id=100010150003009"
-            >
-              <img src="facebook.png" alt="" />
-              <p>Facebook</p></a
-            >
-          </div>
-          <div class="footcard" class="footcard" id="lf">
-            <a
-              target="_blank"
-              class="footcard"
-              href="https://www.instagram.com/rupesh_gupta_951/"
-            >
-              <img src="instagram.png" alt="" />
-              <p>Instagram</p></a
-            >
-          </div>
-        </div>
-        <p>
-          <a href="#Home" id="back"><p id="top">Back to Top - &uarr;</p></a>
+/* hero right card */
+.hero-card{background:var(--bg1);border:1px solid var(--border);border-radius:16px;
+  padding:1.5rem;width:240px;flex-shrink:0}
+.hc-title{font-family:var(--font-m);font-size:.65rem;color:var(--muted);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.2rem}
+.stat-row{display:flex;flex-direction:column;gap:.9rem}
+.stat-item{display:flex;align-items:center;gap:.75rem}
+.stat-num{font-family:var(--font-d);font-size:1.4rem;font-weight:800;color:var(--white);
+  letter-spacing:-.03em;min-width:42px}
+.stat-num .ac{color:var(--accent)}
+.stat-txt{font-size:.78rem;color:var(--muted);line-height:1.35}
+.hc-divider{height:1px;background:var(--border);margin:1.1rem 0}
+.tech-pills{display:flex;flex-wrap:wrap;gap:.35rem}
+.tp{font-family:var(--font-m);font-size:.64rem;padding:.22rem .55rem;
+  border-radius:4px;background:rgba(79,142,247,.1);color:var(--accent);
+  border:1px solid rgba(79,142,247,.2)}
+
+/* ─── ABOUT ──────────────────────────────────────────────────── */
+#about{background:var(--bg1)}
+.about-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
+.about-body p{color:var(--muted);font-size:.97rem;line-height:1.9;margin-bottom:1.1rem}
+.about-body strong{color:var(--white);font-weight:500}
+.about-vals{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.75rem}
+.val-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);
+  padding:1rem 1.1rem;transition:border-color var(--tr)}
+.val-card:hover{border-color:var(--border2)}
+.val-icon{font-size:1.1rem;margin-bottom:.4rem}
+.val-title{font-size:.82rem;font-weight:600;color:var(--white);margin-bottom:.2rem}
+.val-desc{font-size:.75rem;color:var(--muted);line-height:1.5}
+.skills-col{}
+.sg{margin-bottom:1.6rem}
+.sg-label{font-family:var(--font-m);font-size:.65rem;color:var(--teal);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:.65rem}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chip{padding:.3rem .75rem;border:1px solid var(--border);border-radius:100px;
+  font-size:.78rem;font-weight:500;color:var(--muted);background:var(--bg2);
+  transition:border-color var(--tr),color var(--tr),background var(--tr);cursor:default}
+.chip:hover{border-color:var(--accent);color:var(--white);background:rgba(79,142,247,.08)}
+.chip.hot{border-color:rgba(79,142,247,.45);color:var(--accent);background:rgba(79,142,247,.09)}
+
+/* ─── EXPERIENCE ─────────────────────────────────────────────── */
+#experience{}
+.exp-grid{display:grid;grid-template-columns:300px 1fr;gap:3rem}
+.exp-tabs{display:flex;flex-direction:column;gap:.4rem;position:sticky;top:90px}
+.tab{padding:.7rem 1rem;border-radius:var(--rs);cursor:pointer;
+  border:1px solid transparent;transition:all var(--tr);text-align:left}
+.tab:hover{background:var(--bg1);border-color:var(--border)}
+.tab.active{background:var(--bg1);border-color:var(--border2)}
+.tab-company{font-family:var(--font-d);font-size:.92rem;font-weight:600;color:var(--muted);transition:color var(--tr)}
+.tab.active .tab-company,.tab:hover .tab-company{color:var(--white)}
+.tab-period{font-family:var(--font-m);font-size:.67rem;color:var(--dim);margin-top:.15rem}
+.tab.active .tab-period{color:var(--accent)}
+.tab-badge{display:inline-block;margin-top:.35rem;font-family:var(--font-m);font-size:.6rem;
+  padding:.15rem .5rem;border-radius:3px;background:rgba(0,212,170,.12);
+  color:var(--teal);border:1px solid rgba(0,212,170,.2)}
+
+/* experience detail panel */
+.exp-panel{display:none}
+.exp-panel.show{display:block}
+.ep-header{margin-bottom:1.75rem}
+.ep-role{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:.3rem}
+.ep-company{font-size:.9rem;color:var(--accent);margin-bottom:.4rem}
+.ep-meta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.ep-tag{font-family:var(--font-m);font-size:.68rem;padding:.2rem .6rem;
+  border-radius:100px;background:rgba(79,142,247,.1);color:var(--accent);
+  border:1px solid rgba(79,142,247,.2)}
+.ep-tag.teal{background:rgba(0,212,170,.1);color:var(--teal);border-color:rgba(0,212,170,.2)}
+.impact-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.75rem}
+.ic{background:var(--bg1);border:1px solid var(--border);border-radius:var(--rs);
+  padding:.9rem 1rem;text-align:center}
+.ic-num{font-family:var(--font-d);font-size:1.35rem;font-weight:800;color:var(--accent);
+  letter-spacing:-.03em;margin-bottom:.2rem}
+.ic-label{font-size:.7rem;color:var(--muted);font-family:var(--font-m)}
+.ep-section-title{font-family:var(--font-m);font-size:.65rem;color:var(--muted);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem;margin-top:1.5rem}
+.ep-achievements{display:flex;flex-direction:column;gap:.7rem}
+.achievement{display:flex;gap:.85rem;align-items:flex-start;
+  background:var(--bg1);border:1px solid var(--border);border-radius:var(--rs);
+  padding:.9rem 1.1rem;transition:border-color var(--tr)}
+.achievement:hover{border-color:var(--border2)}
+.ach-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+.ach-body{}
+.ach-title{font-size:.87rem;font-weight:600;color:var(--white);margin-bottom:.2rem}
+.ach-desc{font-size:.8rem;color:var(--muted);line-height:1.6}
+.ep-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.5rem}
+
+/* ─── PROJECTS ───────────────────────────────────────────────── */
+#projects{background:var(--bg1)}
+.proj-filter{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.pf-btn{padding:.35rem .9rem;border:1px solid var(--border);border-radius:100px;
+  font-size:.78rem;font-weight:500;color:var(--muted);background:transparent;
+  cursor:pointer;transition:all var(--tr)}
+.pf-btn:hover,.pf-btn.on{border-color:var(--accent);color:var(--accent);background:rgba(79,142,247,.08)}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.1rem}
+.pc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.6rem;display:flex;flex-direction:column;
+  transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr);position:relative;overflow:hidden}
+.pc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent),var(--teal));
+  transform:scaleX(0);transform-origin:left;transition:transform var(--tr)}
+.pc:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 18px 44px rgba(0,0,0,.38)}
+.pc:hover::before{transform:scaleX(1)}
+.pc-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1rem}
+.pc-icon{width:40px;height:40px;border-radius:10px;
+  background:rgba(79,142,247,.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.pc-links{display:flex;gap:.5rem}
+.pc-links a{color:var(--dim);transition:color var(--tr);line-height:0}
+.pc-links a:hover{color:var(--accent)}
+.pc-links svg{width:17px;height:17px;fill:currentColor}
+.pc-name{font-family:var(--font-d);font-weight:700;font-size:.98rem;margin-bottom:.4rem}
+.pc-type{font-family:var(--font-m);font-size:.62rem;color:var(--teal);margin-bottom:.6rem}
+.pc-desc{font-size:.83rem;color:var(--muted);line-height:1.7;flex:1;margin-bottom:1.1rem}
+.pc-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.ptag{font-family:var(--font-m);font-size:.68rem;color:var(--accent);
+  background:rgba(79,142,247,.1);padding:.18rem .55rem;border-radius:4px}
+.pc.featured{border-color:rgba(79,142,247,.25);grid-column:span 2}
+@media(max-width:768px){.pc.featured{grid-column:span 1}}
+
+/* ─── TESTIMONIAL / APPROACH ─────────────────────────────────── */
+#approach{}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:.5rem}
+.ap-card{background:var(--bg1);border:1px solid var(--border);border-radius:var(--r);
+  padding:1.5rem;transition:border-color var(--tr),transform var(--tr)}
+.ap-card:hover{border-color:var(--border2);transform:translateY(-3px)}
+.ap-num{font-family:var(--font-m);font-size:.65rem;color:var(--accent);margin-bottom:.75rem}
+.ap-title{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.5rem}
+.ap-desc{font-size:.82rem;color:var(--muted);line-height:1.65}
+
+/* ─── CONTACT ────────────────────────────────────────────────── */
+#contact{background:var(--bg1)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.cform{display:flex;flex-direction:column;gap:.9rem}
+.fg{display:flex;flex-direction:column;gap:.35rem}
+.fg label{font-family:var(--font-m);font-size:.68rem;color:var(--muted);letter-spacing:.06em}
+.fg input,.fg textarea{background:var(--bg2);border:1px solid var(--border);
+  border-radius:var(--rs);color:var(--white);padding:.65rem .95rem;
+  font-family:var(--font-b);font-size:.88rem;outline:none;resize:none;
+  transition:border-color var(--tr)}
+.fg input:focus,.fg textarea:focus{border-color:var(--accent)}
+.fg textarea{min-height:105px}
+#fsuccess{display:none;padding:.7rem 1rem;
+  background:rgba(0,212,170,.1);border:1px solid rgba(0,212,170,.3);
+  border-radius:var(--rs);color:var(--teal);font-size:.82rem}
+.cinfo{display:flex;flex-direction:column;gap:1.4rem}
+.ci{display:flex;gap:.9rem;align-items:flex-start}
+.ci-icon{width:40px;height:40px;flex-shrink:0;border-radius:10px;
+  background:rgba(79,142,247,.1);display:flex;align-items:center;justify-content:center;
+  font-size:1rem;color:var(--accent)}
+.ci-lbl{font-family:var(--font-m);font-size:.65rem;color:var(--muted);
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}
+.ci-val{font-size:.88rem;font-weight:500;color:var(--white);word-break:break-all}
+.ci-val a{color:var(--accent);transition:opacity var(--tr)}
+.ci-val a:hover{opacity:.7}
+.avail-box{background:var(--bg2);border:1px solid rgba(0,212,170,.25);border-radius:var(--r);
+  padding:1.25rem 1.4rem;margin-top:.5rem}
+.avail-title{font-family:var(--font-m);font-size:.65rem;color:var(--teal);
+  letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
+.avail-title::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--teal);
+  animation:pulse 2s infinite;display:inline-block}
+.avail-text{font-size:.85rem;color:var(--muted);line-height:1.65}
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+footer{border-top:1px solid var(--border);padding:2rem clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-left{font-family:var(--font-m);font-size:.72rem;color:var(--dim)}
+.ft-left span{color:var(--accent)}
+.ft-links{display:flex;gap:1.25rem}
+.ft-links a{color:var(--dim);transition:color var(--tr);line-height:0}
+.ft-links a:hover{color:var(--accent)}
+.ft-links svg{width:16px;height:16px;fill:currentColor}
+
+/* ─── BACK TO TOP ────────────────────────────────────────────── */
+#btt{position:fixed;bottom:1.75rem;right:1.75rem;width:42px;height:42px;
+  background:var(--bg2);border:1px solid var(--border);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  z-index:50;opacity:0;pointer-events:none;
+  transition:opacity var(--tr),border-color var(--tr),transform var(--tr);color:var(--muted)}
+#btt.vis{opacity:1;pointer-events:auto}
+#btt:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+#btt svg{width:16px;height:16px;fill:currentColor}
+
+/* ─── REVEAL ─────────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.rv.vis{opacity:1;transform:none}
+.rv2{opacity:0;transform:translateY(22px);transition:opacity .5s ease .1s,transform .5s ease .1s}
+.rv2.vis{opacity:1;transform:none}
+
+/* ─── RESPONSIVE ─────────────────────────────────────────────── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .exp-grid{grid-template-columns:1fr}
+  .exp-tabs{position:static;flex-direction:row;flex-wrap:wrap}
+  .about-wrap{grid-template-columns:1fr;gap:3rem}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .approach-grid{grid-template-columns:1fr}
+  .impact-cards{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:640px){
+  .nl{display:none}
+  .ham{display:flex}
+  .impact-cards{grid-template-columns:1fr 1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .about-vals{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<div id="pbar"></div>
+
+<button id="btt" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</button>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-mark">RG</div>
+    Rupesh<span style="color:var(--accent)">.</span>dev
+  </div>
+  <ul class="nl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me</a></li>
+  </ul>
+  <div class="ham" id="ham" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mob-nav" id="mobnav">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#experience" onclick="closeMob()">Experience</a>
+  <a href="#projects" onclick="closeMob()">Projects</a>
+  <a href="#approach" onclick="closeMob()">Approach</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+
+<!-- ═══ HERO ══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb2"></div>
+  <div class="wrap" style="width:100%">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-badge">Open to new opportunities</div>
+        <h1 class="hero-name">
+          <div>Rupesh</div>
+          <div class="g">Gupta</div>
+        </h1>
+        <p class="hero-role"><span id="tw"></span><span class="cursor"></span></p>
+        <p class="hero-desc">
+          <strong>3+ years</strong> building enterprise-grade web applications across Sales, CRM, ERP,
+          EdTech &amp; Events domains. I bring designs to life with <strong>Angular</strong>,
+          <strong>TypeScript</strong>, and a deep focus on <strong>performance and UX</strong>.
         </p>
-
-        <p class="footertext">
-          ©Copyright--2022 | All Rights Reserved | @Rupesh_Gupta_951
-        </p>
+        <div class="hero-btns">
+          <a href="#projects" class="btn-p">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+            View Work
+          </a>
+          <a href="#contact" class="btn-s">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Get In Touch
+          </a>
+          <a href="https://www.linkedin.com/in/rupeshgupta951/" target="_blank" class="btn-s">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://github.com/rupeshgupta951" target="_blank" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rupeshgupta951/" target="_blank" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="mailto:Rupeshggupta951@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </a>
+          <div class="sep"></div>
+          <span class="hero-loc">📍 Navi Mumbai, IN</span>
+        </div>
       </div>
-    </footer>
-    <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <script>
-      $(document).ready(function () {
-        $(this).scrollTop(0);
-      });
-    </script>
-    <script>
-      window.onload = function () {
-        document.getElementById("form").reset();
-      };
-    </script>
-    <script>
-      window.onscroll = () => {
-        myFunction();
-      };
+      <!-- Stats Card -->
+      <div class="hero-card rv2">
+        <div class="hc-title">At a glance</div>
+        <div class="stat-row">
+          <div class="stat-item">
+            <div class="stat-num">3<span class="ac">+</span></div>
+            <div class="stat-txt">Years of professional<br>experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5<span class="ac">+</span></div>
+            <div class="stat-txt">Enterprise products<br>shipped end-to-end</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">15<span class="ac">+</span></div>
+            <div class="stat-txt">Reusable components<br>built & maintained</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">8<span class="ac">+</span></div>
+            <div class="stat-txt">Personal projects<br>deployed live</div>
+          </div>
+        </div>
+        <div class="hc-divider"></div>
+        <div class="hc-title">Core Stack</div>
+        <div class="tech-pills">
+          <span class="tp">Angular</span>
+          <span class="tp">TypeScript</span>
+          <span class="tp">RxJS</span>
+          <span class="tp">SCSS</span>
+          <span class="tp">React</span>
+          <span class="tp">Next.js</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      const navbar = document.getElementByClassName("navbar");
+<hr class="div">
 
-      const sticky = navbar.offsetTop;
+<!-- ═══ ABOUT ═════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="wrap">
+    <div class="rv"><p class="lbl">// about me</p>
+    <h2 class="h2">Turning complex requirements<br>into clean, scalable UIs</h2></div>
+    <div class="about-wrap">
+      <div class="about-body rv">
+        <p>I'm a <strong>Frontend Developer based in Navi Mumbai</strong> with 3+ years of experience building production-ready web applications. My day-to-day revolves around <strong>Angular, TypeScript, and RxJS</strong> — but I think in terms of user flows, data states, and component contracts first.</p>
+        <p>I've shipped solutions across five different domains — Sales Dashboards, CRM, ERP, EdTech, and Event Booking — which has given me a strong instinct for building systems that <strong>non-technical stakeholders can actually use</strong> and engineers can actually maintain.</p>
+        <p>Beyond Angular, I work with <strong>React, Next.js</strong> for personal projects and SSR use cases, and actively use <strong>Cursor AI &amp; GitHub Copilot</strong> to stay sharp without letting AI replace the thinking.</p>
+        <p>I care about <strong>clean architecture, responsive design, and code that future-you won't regret</strong>. Outside work, I'm always experimenting — whether it's a crypto dashboard, a CRUD app in React, or a calculator that actually works.</p>
+        <div class="about-vals">
+          <div class="val-card">
+            <div class="val-icon">⚡</div>
+            <div class="val-title">Performance First</div>
+            <div class="val-desc">OnPush CD, lazy loading, AOT compilation, bundle optimization — I ship fast pages.</div>
+          </div>
+          <div class="val-card">
+            <div class="val-icon">🧩</div>
+            <div class="val-title">Reusable by Default</div>
+            <div class="val-desc">Components are built to be shared, not duplicated. 15+ shared components in production.</div>
+          </div>
+          <div class="val-card">
+            <div class="val-icon">🤝</div>
+            <div class="val-title">Team-Oriented</div>
+            <div class="val-desc">Agile/Scrum, code reviews, PR workflows, clear naming — I make teammates' lives easier.</div>
+          </div>
+          <div class="val-card">
+            <div class="val-icon">🤖</div>
+            <div class="val-title">AI-Augmented</div>
+            <div class="val-desc">Cursor AI & GitHub Copilot for acceleration — not as a crutch, but as a multiplier.</div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-col rv2">
+        <div class="sg">
+          <div class="sg-label">Primary Stack</div>
+          <div class="chips">
+            <span class="chip hot">Angular 2+</span>
+            <span class="chip hot">TypeScript</span>
+            <span class="chip hot">RxJS</span>
+            <span class="chip hot">SCSS</span>
+            <span class="chip">JavaScript ES6+</span>
+            <span class="chip">HTML5</span>
+          </div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">UI & Components</div>
+          <div class="chips">
+            <span class="chip">Angular Material</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">Material UI</span>
+            <span class="chip">Responsive Design</span>
+          </div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Architecture</div>
+          <div class="chips">
+            <span class="chip">Component Architecture</span>
+            <span class="chip">Lazy Loading</span>
+            <span class="chip">OnPush CD</span>
+            <span class="chip">HTTP Interceptors</span>
+            <span class="chip">State Management</span>
+            <span class="chip">AOT</span>
+          </div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Also Proficient</div>
+          <div class="chips">
+            <span class="chip">React JS</span>
+            <span class="chip">Next.js (SSR/SSG)</span>
+            <span class="chip">Node.js</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Git</span>
+            <span class="chip">Azure DevOps</span>
+            <span class="chip">Cursor AI</span>
+            <span class="chip">GitHub Copilot</span>
+          </div>
+        </div>
+        <div class="sg">
+          <div class="sg-label">Education & Cert</div>
+          <div class="chips">
+            <span class="chip">B.Sc. CS · CGPA 8.72</span>
+            <span class="chip">Meta Front-End Cert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      myFunction = () => {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky");
-        } else {
-          navbar.classList.remove("sticky");
-        }
-      };
-    </script>
-    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-      function sendEmail() {
-        Email.send({
-          Host: "smtp.elasticemail.com",
-          Username: "rupeshid951@gmail.com",
-          Password: "AC7298517C800456B6FD7D20886FB6B356BD",
-          To: "rupeshid951@gmail.com",
-          From: document.getElementById("email").value,
-          Subject: "Message from Your Portfolio",
-          Body:
-            "Name:" +
-            document.getElementById("name").value +
-            "<br> Email:" +
-            document.getElementById("email").value +
-            "<br> Phone No.:" +
-            document.getElementById("phone").value +
-            "<br> Message:" +
-            document.getElementById("email").value,
-        }).then((message) => alert(message));
-      }
-    </script> -->
-  </body>
+<hr class="div">
+
+<!-- ═══ EXPERIENCE ════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="wrap">
+    <div class="rv"><p class="lbl">// experience</p>
+    <h2 class="h2">Where I've made an impact</h2>
+    <p class="sub">3+ years at a product company — shipping across 5 domains, architecting systems, and growing into a lead contributor.</p></div>
+
+    <div class="exp-grid">
+      <!-- Tabs -->
+      <div class="exp-tabs rv">
+        <div class="tab active" onclick="showPanel('carufus',this)">
+          <div class="tab-company">Carufus Technology</div>
+          <div class="tab-period">Mar 2023 – Present · 3 yrs+</div>
+          <span class="tab-badge">Current</span>
+        </div>
+        <div class="tab" onclick="showPanel('freelance',this)">
+          <div class="tab-company">Personal Projects</div>
+          <div class="tab-period">2020 – 2023 · Pre-career</div>
+        </div>
+      </div>
+
+      <!-- Panels -->
+      <div class="exp-panels rv2">
+        <!-- Carufus Panel -->
+        <div class="exp-panel show" id="panel-carufus">
+          <div class="ep-header">
+            <div class="ep-role">Frontend Developer</div>
+            <div class="ep-company">Carufus Technology · Mumbai</div>
+            <div class="ep-meta">
+              <span class="ep-tag">Mar 2023 – Present</span>
+              <span class="ep-tag teal">Full-Time</span>
+              <span class="ep-tag">On-site · Mumbai</span>
+            </div>
+          </div>
+
+          <div class="impact-cards">
+            <div class="ic">
+              <div class="ic-num">5+</div>
+              <div class="ic-label">Products Shipped</div>
+            </div>
+            <div class="ic">
+              <div class="ic-num">15+</div>
+              <div class="ic-label">Shared Components</div>
+            </div>
+            <div class="ic">
+              <div class="ic-num">3 yrs</div>
+              <div class="ic-label">Tenure & Counting</div>
+            </div>
+          </div>
+
+          <div class="ep-section-title">Key Deliverables & Impact</div>
+          <div class="ep-achievements">
+            <div class="achievement">
+              <div class="ach-icon">📊</div>
+              <div class="ach-body">
+                <div class="ach-title">Business Insights Sales Dashboard</div>
+                <div class="ach-desc">Architected a real-time analytics dashboard with interactive KPI cards, drill-down charts, and dynamic filters. Used directly by C-level and senior stakeholders across multiple business units to drive data-backed decisions.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🤝</div>
+              <div class="ach-body">
+                <div class="ach-title">CRM Application — Lead Pipeline & RBAC</div>
+                <div class="ach-desc">Built a full-featured CRM with multi-stage lead pipelines, role-based access control, and paginated data grids handling large datasets. Introduced a shared-service state layer that eliminated redundant API calls across the app.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🏭</div>
+              <div class="ach-body">
+                <div class="ach-title">ERP Application — Modular Feature Architecture</div>
+                <div class="ach-desc">Delivered inventory, procurement, and reporting modules as independently deployable Angular feature modules with lazy loading — ensuring clean separation of concerns and a maintainable, team-scalable codebase.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🌍</div>
+              <div class="ach-body">
+                <div class="ach-title">Study Abroad Platform — Mobile-First EdTech</div>
+                <div class="ach-desc">Engineered a course discovery and application tracking experience with document upload and real-time progress indicators. The progress visibility directly reduced inbound student support queries.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🎫</div>
+              <div class="ach-body">
+                <div class="ach-title">Event Booking Platform — High-Concurrency UI</div>
+                <div class="ach-desc">Built seat selection with optimistic UI updates and REST API polling under load — preventing double-booking scenarios in high-traffic event windows. Implemented retry logic and graceful degradation for network failures.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🧩</div>
+              <div class="ach-body">
+                <div class="ach-title">Component Library & HTTP Standards</div>
+                <div class="ach-desc">Designed and maintained 15+ reusable Angular components and utility services used across all products. Standardized HTTP interceptor patterns for auth, error handling, and response transformation — reducing boilerplate across every new module.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🤖</div>
+              <div class="ach-body">
+                <div class="ach-title">AI-Assisted Development Workflow</div>
+                <div class="ach-desc">Adopted Cursor AI and GitHub Copilot into the development workflow for boilerplate generation, refactoring, and code review acceleration — measurably improving sprint throughput without compromising code quality standards.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ep-section-title">Technologies Used</div>
+          <div class="ep-tech">
+            <span class="chip hot">Angular 2+</span>
+            <span class="chip hot">TypeScript</span>
+            <span class="chip hot">RxJS</span>
+            <span class="chip">Angular Material</span>
+            <span class="chip">SCSS</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">HTTP Interceptors</span>
+            <span class="chip">Lazy Loading</span>
+            <span class="chip">OnPush CD</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">Git</span>
+            <span class="chip">Azure DevOps</span>
+          </div>
+        </div>
+
+        <!-- Personal / Freelance Panel -->
+        <div class="exp-panel" id="panel-freelance">
+          <div class="ep-header">
+            <div class="ep-role">Self-Taught Developer & Builder</div>
+            <div class="ep-company">Personal Projects · 2020–2023</div>
+            <div class="ep-meta">
+              <span class="ep-tag">Pre-career exploration</span>
+              <span class="ep-tag teal">6+ live projects</span>
+            </div>
+          </div>
+          <div class="ep-section-title">Foundations Built</div>
+          <div class="ep-achievements">
+            <div class="achievement">
+              <div class="ach-icon">🌤</div>
+              <div class="ach-body">
+                <div class="ach-title">Weather App — Real-time API Integration</div>
+                <div class="ach-desc">Built from scratch using HTML, CSS, and vanilla JavaScript — integrating a live weather API to render real-time forecasts and location-based data. Sharpened async JS and DOM manipulation fundamentals.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">✅</div>
+              <div class="ach-body">
+                <div class="ach-title">To-Do List App — React CRUD</div>
+                <div class="ach-desc">Full CRUD To-Do application built in React with Bootstrap for layout. Focused on state management patterns, component lifecycle, and responsive UX — the first project where React clicked.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">🚗</div>
+              <div class="ach-body">
+                <div class="ach-title">E-Vehicle Landing Page</div>
+                <div class="ach-desc">Responsive marketing landing page for an e-vehicle business built with HTML, CSS, JavaScript, and Bootstrap. Focused on visual hierarchy, CTAs, and cross-device layout precision.</div>
+              </div>
+            </div>
+            <div class="achievement">
+              <div class="ach-icon">📋</div>
+              <div class="ach-body">
+                <div class="ach-title">React Dashboard — Material UI</div>
+                <div class="ach-desc">Responsive admin dashboard using React JS, Material UI, and SCSS. Deepened understanding of component composition, theming systems, and data visualization layout patterns.</div>
+              </div>
+            </div>
+          </div>
+          <div class="ep-section-title">Technologies Learned</div>
+          <div class="ep-tech">
+            <span class="chip">HTML5</span>
+            <span class="chip">CSS3</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">React JS</span>
+            <span class="chip">Bootstrap</span>
+            <span class="chip">Material UI</span>
+            <span class="chip">Git & GitHub</span>
+            <span class="chip">Netlify</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ PROJECTS ══════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="rv"><p class="lbl">// projects</p>
+    <h2 class="h2">Things I've built & shipped</h2>
+    <p class="sub">Enterprise products from work, plus personal projects that kept skills sharp before and beyond the day job.</p></div>
+
+    <div class="proj-filter rv">
+      <button class="pf-btn on" onclick="filterProj('all',this)">All</button>
+      <button class="pf-btn" onclick="filterProj('enterprise',this)">Enterprise</button>
+      <button class="pf-btn" onclick="filterProj('personal',this)">Personal</button>
+      <button class="pf-btn" onclick="filterProj('angular',this)">Angular</button>
+      <button class="pf-btn" onclick="filterProj('react',this)">React</button>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- Featured: Sales Dashboard -->
+      <div class="pc featured rv" data-cat="enterprise angular">
+        <div class="pc-top">
+          <div class="pc-icon">📊</div>
+          <div class="pc-links">
+            <a href="https://github.com/rupeshgupta951" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">⭐ Featured · Enterprise · Carufus Technology</div>
+        <div class="pc-name">Business Insights Sales Dashboard</div>
+        <div class="pc-desc">Real-time analytics platform consumed by senior stakeholders across multiple business units. Features interactive KPI cards with trend indicators, drill-down chart views, dynamic date/category filters, and role-scoped data visibility. Architected the entire frontend from data contracts through to rendering layer.</div>
+        <div class="pc-tags">
+          <span class="ptag">Angular</span><span class="ptag">TypeScript</span>
+          <span class="ptag">RxJS</span><span class="ptag">REST APIs</span>
+          <span class="ptag">OnPush CD</span><span class="ptag">Angular Material</span>
+        </div>
+      </div>
+
+      <!-- CRM -->
+      <div class="pc rv" data-cat="enterprise angular">
+        <div class="pc-top">
+          <div class="pc-icon">🤝</div>
+          <div class="pc-links">
+            <a href="https://github.com/rupeshgupta951" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Enterprise · CRM · Carufus Technology</div>
+        <div class="pc-name">CRM — Lead Pipeline & Access Control</div>
+        <div class="pc-desc">Full-featured CRM with multi-stage lead pipelines, RBAC, and paginated data grids. Shared-service state architecture eliminated redundant API calls across the whole app.</div>
+        <div class="pc-tags">
+          <span class="ptag">Angular</span><span class="ptag">RBAC</span>
+          <span class="ptag">State Mgmt</span><span class="ptag">HTTP Interceptors</span>
+        </div>
+      </div>
+
+      <!-- ERP -->
+      <div class="pc rv" data-cat="enterprise angular">
+        <div class="pc-top">
+          <div class="pc-icon">🏭</div>
+          <div class="pc-links">
+            <a href="https://github.com/rupeshgupta951" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Enterprise · ERP · Carufus Technology</div>
+        <div class="pc-name">ERP — Modular Feature Modules</div>
+        <div class="pc-desc">Inventory, procurement, and reporting modules as independently deployable lazy-loaded Angular feature modules — clean separation of concerns, maintainable at team scale.</div>
+        <div class="pc-tags">
+          <span class="ptag">Angular</span><span class="ptag">Lazy Loading</span>
+          <span class="ptag">Module Architecture</span>
+        </div>
+      </div>
+
+      <!-- Study Abroad -->
+      <div class="pc rv" data-cat="enterprise angular">
+        <div class="pc-top">
+          <div class="pc-icon">🌍</div>
+          <div class="pc-links">
+            <a href="https://github.com/rupeshgupta951" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Enterprise · EdTech · Carufus Technology</div>
+        <div class="pc-name">Study Abroad Platform</div>
+        <div class="pc-desc">Mobile-first course discovery and application tracking with real-time progress indicators and document upload. Progress visibility directly reduced student support queries.</div>
+        <div class="pc-tags">
+          <span class="ptag">Angular</span><span class="ptag">Mobile-First</span>
+          <span class="ptag">Next.js</span><span class="ptag">REST APIs</span>
+        </div>
+      </div>
+
+      <!-- Crypto Dashboard -->
+      <div class="pc rv" data-cat="personal react">
+        <div class="pc-top">
+          <div class="pc-icon">₿</div>
+          <div class="pc-links">
+            <a href="https://cosmic-parfait-dbe231.netlify.app/" target="_blank" title="Live Demo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            </a>
+            <a href="https://github.com/rupeshgupta951" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Personal · React Dashboard · Live</div>
+        <div class="pc-name">Crypto Trading Dashboard</div>
+        <div class="pc-desc">Mobile-responsive trading UI with live price cards, portfolio overview, and transaction history. Showcases React component architecture, state management, and Material UI theming.</div>
+        <div class="pc-tags">
+          <span class="ptag">React</span><span class="ptag">Material UI</span>
+          <span class="ptag">SCSS</span>
+        </div>
+      </div>
+
+      <!-- Weather App -->
+      <div class="pc rv" data-cat="personal">
+        <div class="pc-top">
+          <div class="pc-icon">🌤</div>
+          <div class="pc-links">
+            <a href="https://rupeshgupta951.github.io/Wheather-App/" target="_blank" title="Live">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            </a>
+            <a href="https://github.com/rupeshgupta951" target="_blank" title="GitHub">
+              <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Personal · Vanilla JS · Live</div>
+        <div class="pc-name">Weather App</div>
+        <div class="pc-desc">Real-time weather forecasting app from scratch using HTML, CSS, and JavaScript with live API integration. One of my first projects — still deployed and working.</div>
+        <div class="pc-tags">
+          <span class="ptag">HTML</span><span class="ptag">CSS</span>
+          <span class="ptag">JavaScript</span><span class="ptag">REST API</span>
+        </div>
+      </div>
+
+      <!-- To-Do App -->
+      <div class="pc rv" data-cat="personal react">
+        <div class="pc-top">
+          <div class="pc-icon">✅</div>
+          <div class="pc-links">
+            <a href="https://rupeshgupta951.github.io/What-To-Do-App/" target="_blank" title="Live">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Personal · React · Live</div>
+        <div class="pc-name">To-Do List App</div>
+        <div class="pc-desc">Full CRUD task manager in React with Bootstrap. Where state management patterns and component thinking first clicked for me.</div>
+        <div class="pc-tags">
+          <span class="ptag">React</span><span class="ptag">Bootstrap</span><span class="ptag">CRUD</span>
+        </div>
+      </div>
+
+      <!-- E-Vehicle -->
+      <div class="pc rv" data-cat="personal">
+        <div class="pc-top">
+          <div class="pc-icon">🚗</div>
+          <div class="pc-links">
+            <a href="https://astounding-peony-25720c.netlify.app/" target="_blank" title="Live">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="pc-type">Personal · Landing Page · Live</div>
+        <div class="pc-name">E-Vehicle Landing Page</div>
+        <div class="pc-desc">Responsive marketing landing page for an e-vehicle business — focused on visual hierarchy, CTA design, and cross-device precision.</div>
+        <div class="pc-tags">
+          <span class="ptag">HTML</span><span class="ptag">CSS</span>
+          <span class="ptag">Bootstrap</span><span class="ptag">JavaScript</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ APPROACH ══════════════════════════════════════════════ -->
+<section id="approach">
+  <div class="wrap">
+    <div class="rv"><p class="lbl">// how I work</p>
+    <h2 class="h2">What working with me looks like</h2></div>
+    <div class="approach-grid">
+      <div class="ap-card rv">
+        <div class="ap-num">01</div>
+        <div class="ap-title">I read requirements like a product person</div>
+        <div class="ap-desc">Before writing a single line, I ask: who uses this, what do they need, and where could this fail? That thinking shows in the edge cases I catch before QA does.</div>
+      </div>
+      <div class="ap-card rv" style="transition-delay:.07s">
+        <div class="ap-num">02</div>
+        <div class="ap-title">Architecture before components</div>
+        <div class="ap-desc">I design data flow, state boundaries, and service contracts upfront. Components are the output — not the starting point. This keeps codebases maintainable as they scale.</div>
+      </div>
+      <div class="ap-card rv" style="transition-delay:.14s">
+        <div class="ap-num">03</div>
+        <div class="ap-title">Delivery without dropping quality</div>
+        <div class="ap-desc">Agile sprints, PR reviews, bug triage — I've worked in real teams under real deadlines. I know when to ship and when to refactor, and I communicate the tradeoffs clearly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div">
+
+<!-- ═══ CONTACT ════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="rv"><p class="lbl">// contact</p>
+    <h2 class="h2">Let's build something together</h2>
+    <p class="sub">Open to frontend roles, contract projects, and interesting collabs. Response time: usually within 24 hours.</p></div>
+    <div class="contact-grid">
+      <div class="cform rv">
+        <div class="fg">
+          <label>Your name</label>
+          <input type="text" id="cfn" placeholder="Jane Smith"/>
+        </div>
+        <div class="fg">
+          <label>Email</label>
+          <input type="email" id="cfe" placeholder="jane@company.com"/>
+        </div>
+        <div class="fg">
+          <label>Subject</label>
+          <input type="text" id="cfs" placeholder="Frontend role at Acme Inc."/>
+        </div>
+        <div class="fg">
+          <label>Message</label>
+          <textarea id="cfm" placeholder="Tell me about the opportunity or project…"></textarea>
+        </div>
+        <div id="fsuccess">✓ Thanks! Opening your mail client now.</div>
+        <button class="btn-p" onclick="submitForm()" style="align-self:flex-start;border:none;cursor:pointer">
+          Send Message →
+        </button>
+      </div>
+      <div class="rv2">
+        <div class="cinfo">
+          <div class="ci">
+            <div class="ci-icon">✉</div>
+            <div>
+              <div class="ci-lbl">Email</div>
+              <div class="ci-val"><a href="mailto:Rupeshggupta951@gmail.com">Rupeshggupta951@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-lbl">Phone</div>
+              <div class="ci-val"><a href="tel:+918879812951">+91 88798 12951</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">🔗</div>
+            <div>
+              <div class="ci-lbl">LinkedIn</div>
+              <div class="ci-val"><a href="https://www.linkedin.com/in/rupeshgupta951/" target="_blank">linkedin.com/in/rupeshgupta951</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">⌨</div>
+            <div>
+              <div class="ci-lbl">GitHub</div>
+              <div class="ci-val"><a href="https://github.com/rupeshgupta951" target="_blank">github.com/rupeshgupta951</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-lbl">Location</div>
+              <div class="ci-val">Airoli, Navi Mumbai · Open to Remote</div>
+            </div>
+          </div>
+        </div>
+        <div class="avail-box" style="margin-top:2rem">
+          <div class="avail-title">Currently available</div>
+          <div class="avail-text">I'm actively exploring <strong style="color:var(--white)">frontend engineering roles</strong> — full-time, hybrid, or remote. Happy to have a quick call to see if there's a fit.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-left">
+    <span>Rupesh Gupta</span> · Frontend Developer · Navi Mumbai · 2025
+  </div>
+  <div class="ft-links">
+    <a href="https://github.com/rupeshgupta951" target="_blank" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/rupeshgupta951/" target="_blank" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+    </a>
+    <a href="mailto:Rupeshggupta951@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    </a>
+  </div>
+</footer>
+
+<script>
+/* ── TYPEWRITER ──────────────────────────── */
+const roles=['Angular Developer','Frontend Engineer','TypeScript Dev','UI Architect','Enterprise UI Builder'];
+let ri=0,ci=0,del=false;
+const tw=document.getElementById('tw');
+function type(){
+  const w=roles[ri];
+  if(!del){tw.textContent=w.slice(0,ci+1);ci++;if(ci===w.length){del=true;setTimeout(type,1900);return}}
+  else{tw.textContent=w.slice(0,ci-1);ci--;if(ci===0){del=false;ri=(ri+1)%roles.length}}
+  setTimeout(type,del?52:88);
+}type();
+
+/* ── SCROLL ──────────────────────────────── */
+const pbar=document.getElementById('pbar');
+const nav=document.getElementById('nav');
+const btt=document.getElementById('btt');
+const navAs=document.querySelectorAll('.nl a:not(.nav-hire)');
+const secs=document.querySelectorAll('section[id]');
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY,t=document.documentElement.scrollHeight-window.innerHeight;
+  pbar.style.width=(y/t*100)+'%';
+  nav.classList.toggle('sc',y>20);
+  btt.classList.toggle('vis',y>400);
+  let cur='';
+  secs.forEach(s=>{if(y>=s.offsetTop-110)cur=s.id});
+  navAs.forEach(a=>a.classList.toggle('act',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* ── SCROLL REVEAL ───────────────────────── */
+const ro=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.rv,.rv2').forEach(el=>ro.observe(el));
+
+/* ── MOBILE NAV ──────────────────────────── */
+function toggleMenu(){
+  const m=document.getElementById('mobnav'),h=document.getElementById('ham');
+  const o=m.classList.toggle('op');
+  h.children[0].style.transform=o?'rotate(45deg) translateY(7px)':'';
+  h.children[1].style.opacity=o?'0':'';
+  h.children[2].style.transform=o?'rotate(-45deg) translateY(-7px)':'';
+}
+function closeMob(){
+  document.getElementById('mobnav').classList.remove('op');
+  const h=document.getElementById('ham');
+  h.children[0].style.transform='';h.children[1].style.opacity='';h.children[2].style.transform='';
+}
+
+/* ── EXP TABS ───────────────────────────── */
+function showPanel(id,tab){
+  document.querySelectorAll('.exp-panel').forEach(p=>p.classList.remove('show'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('panel-'+id).classList.add('show');
+  tab.classList.add('active');
+}
+
+/* ── PROJECT FILTER ─────────────────────── */
+function filterProj(cat,btn){
+  document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.pc').forEach(c=>{
+    const cats=c.getAttribute('data-cat')||'';
+    c.style.display=(cat==='all'||cats.includes(cat))?'flex':'none';
+  });
+}
+
+/* ── CONTACT ────────────────────────────── */
+function submitForm(){
+  const n=document.getElementById('cfn').value.trim();
+  const e=document.getElementById('cfe').value.trim();
+  const s=document.getElementById('cfs').value.trim();
+  const m=document.getElementById('cfm').value.trim();
+  if(!n||!e||!m){alert('Please fill in name, email, and message.');return}
+  const sub=s||'Portfolio Contact from '+n;
+  window.open(`mailto:Rupeshggupta951@gmail.com?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(m+'\n\nFrom: '+n+'\nEmail: '+e)}`);
+  document.getElementById('fsuccess').style.display='block';
+  ['cfn','cfe','cfs','cfm'].forEach(id=>document.getElementById(id).value='');
+}
+</script>
+</body>
 </html>
